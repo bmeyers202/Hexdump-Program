@@ -27,40 +27,6 @@ bool findIfTextFile (string fileName, string fileExt) {
 //R: Create Ascii to binary function, spaced by bytes
 //R: Create Ascii to hex function, spaced by bytes
 
-string hexToAscii(string hexString){
-	string text;
-	const char *asciiChar = hexString.c_str();
-	unsigned int asciiDecNum;
-	while(*asciiChar != 0) {
-		sscanf(asciiChar, "%2X", &asciiDecNum);
-	    if(asciiDecNum < 32 || asciiDecNum > 126){
-	    	text += ".";
-	    }
-	    else{
-	    	text += asciiDecNum;
-	    }
-		asciiChar += 2;
-	}
-	return text;
-}
-
-string binaryToAscii(string binaryString){
-	string text = "";
-	stringstream sstream(binaryString);
-	while (sstream.good()) {
-		bitset<8> binaryByte;
-	    sstream >> binaryByte;
-	    long decodedByte = binaryByte.to_ulong();
-	    if((decodedByte < 32 || decodedByte > 126) && (decodedByte != 0)){
-	    	text += ".";
-	    }
-	    else{
-		    text += binaryByte.to_ulong();
-	    }
-	}
-	return text;
-}
-
 void binarySpacedBytes(string stringToSpace){
 	for (int index = 0; index < int(stringToSpace.length()); index++){
 		if(index % 8 == 0){

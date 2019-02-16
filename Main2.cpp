@@ -23,6 +23,9 @@ bool findIfTextFile (string fileName, string fileExt) {
         return false;
     }
 }
+//Get Address function already created
+//R: Create Ascii to binary function, spaced by bytes
+//R: Create Ascii to hex function, spaced by bytes
 
 string hexToAscii(string hexString){
 	string text;

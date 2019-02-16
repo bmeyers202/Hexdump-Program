@@ -24,8 +24,8 @@ bool findIfTextFile (string fileName, string fileExt) {
     }
 }
 //Get Address function already created
-//R: Create Ascii to binary function, spaced by bytes
-//R: Create Ascii to hex function, spaced by bytes
+//R: Create Ascii to binary function, call binarySpacedBytes function to space bytes
+//R: Create Ascii to hex function, call hexSpacedBytes function to space bytes
 
 void binarySpacedBytes(string stringToSpace){
 	for (int index = 0; index < int(stringToSpace.length()); index++){

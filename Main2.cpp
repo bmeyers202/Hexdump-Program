@@ -85,12 +85,12 @@ int main (int argc, char *argv[]) {
 		if (isBinaryOutput == true){
 			//R: Make call for Ascii to Binary function that you create
 			binarySpacedBytes(line);
-			cout << " " << binaryToAscii(line) << endl;
+			cout << " " << (line) << endl;
 		}
 		else{
 			hexSpacedBytes(line);
 			//R: Make call for Ascii to hex function that you create
-			cout << " " << hexToAscii(line) << endl;
+			cout << " " << (line) << endl;
 		}
 
 	}

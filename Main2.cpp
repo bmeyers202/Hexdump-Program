@@ -88,11 +88,16 @@ int main (int argc, char *argv[]) {
   string line;
   bool isBinaryOutput = false;
   bool isTextFile = false;
-  ifstream myfile (argv[2]);
+  
 
-  findIfTextFile(argv[2], ".txt");
   if(strcmp(argv[1], "-b") == 0){
 	  isBinaryOutput = true;
+	  ifstream myfile (argv[2]);
+	  findIfTextFile(argv[2], ".txt");
+  }
+  else{
+	  ifstream myfile (argv[1]);
+	  findIfTextFile(argv[1], ".txt");
   }
 
   //Open File

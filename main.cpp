@@ -10,7 +10,6 @@ using namespace std;
 int main ( int argc, char *argv[] );
 void handleHex ( char file_in_name[] );
 void handleBinary ( char file_in_name[] );
-bool findIfTextFile (string fileName, string fileExt);
 
 int main ( int argc, char *argv[] ) {
     
@@ -216,13 +215,3 @@ void handleBinary ( char file_in_name[] ) {
     
     return;
 }
-
-
-bool findIfTextFile (string fileName, string fileExt) {
-    if (fileName.length() >= fileExt.length()) {
-        return (0 == fileName.compare (fileName.length() - fileExt.length(), fileExt.length(), fileExt));
-    } else {
-        return false;
-    }
-}
-

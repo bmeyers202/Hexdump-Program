@@ -9,20 +9,12 @@ using namespace std;
 int main ( int argc, char *argv[] );
 void handle ( char file_in_name[] );
 
-
-int main ( int argc, char *argv[] )
-
-
-
-{
+int main ( int argc, char *argv[] ) {
     char file_in_name[80];
     int i;
     bool VERBOSE = true;
 
-    if ( VERBOSE )
-    {
-
-
+    if ( VERBOSE ) {
         cout << "\n";
         cout << "HEXDUMP:\n";
         cout << "  C++ version\n";
@@ -34,8 +26,7 @@ int main ( int argc, char *argv[] )
     //
     //  If the input file was not specified, get it now.
     //
-    if ( argc <= 1 )
-    {
+    if ( argc <= 1 ) {
         cout << "\n";
         cout << "HEXDUMP:\n";
         cout << "  Please enter the name of a file to be analyzed.\n";
@@ -47,16 +38,13 @@ int main ( int argc, char *argv[] )
     //
     //  Otherwise, get the file(s) from the argument list.
     //
-    else
-    {
-        for ( i = 1 ; i < argc ; ++i )
-        {
+    else {
+        for ( i = 1 ; i < argc ; ++i ) {
             handle ( argv[i] );
         }
     }
 
-    if ( VERBOSE )
-    {
+    if ( VERBOSE ){
         cout << "\n";
         cout << "HEXDUMP:\n";
         cout << "  Normal end of execution.\n";
@@ -69,11 +57,7 @@ int main ( int argc, char *argv[] )
 }
 //****************************************************************************80
 
-void handle ( char file_in_name[] )
-
-
-
-{
+void handle ( char file_in_name[] ) {
     long int addr;
     unsigned char buffer[100];
     long int cnt;
@@ -85,8 +69,7 @@ void handle ( char file_in_name[] )
     //
     file_in.open ( file_in_name );
 
-    if ( !file_in )
-    {
+    if ( !file_in ) {
         cout << "\n";
         cout << "HANDLE - Fatal error!\n";
         cout << "  Cannot open \"" << file_in_name << "\"\n";
@@ -106,14 +89,12 @@ void handle ( char file_in_name[] )
     //
     addr = 0;
 
-    while ( 1 )
-    {
+    while ( 1 ) {
         file_in.read ( ( char * ) buffer, 16 );
 
         cnt = file_in.gcount();
 
-        if ( cnt <= 0 )
-        {
+        if ( cnt <= 0 ) {
             break;
         }
         //
@@ -126,16 +107,13 @@ void handle ( char file_in_name[] )
         //  Print 16 data items, in pairs, in hexadecimal.
         //
         cnt2 = 0;
-        for ( n = 0; n < 16; n++ )
-        {
+        for ( n = 0; n < 16; n++ ) {
             cnt2 = cnt2 + 1;
-            if ( cnt2 <= cnt )
-            {
+            if ( cnt2 <= cnt ) {
             	cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n];
             	cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[++n];
             }
-            else
-            {
+            else {
                 cout << "__";
             }
             cout << " ";
@@ -147,17 +125,13 @@ void handle ( char file_in_name[] )
         //
         cout << " ";
         cnt2 = 0;
-        for ( n = 0; n < 16; n++ )
-        {
+        for ( n = 0; n < 16; n++ ) {
             cnt2 = cnt2 + 1;
-            if ( cnt2 <= cnt )
-            {
-                if ( buffer[n] < 32 || 126 < buffer[n] )
-                {
+            if ( cnt2 <= cnt ) {
+                if ( buffer[n] < 32 || 126 < buffer[n] ) {
                     cout << '.';
                 }
-                else
-                {
+                else {
                     cout << buffer[n];
                 }
             }
@@ -165,8 +139,7 @@ void handle ( char file_in_name[] )
         cout << "\n";
         cout << dec;
 
-        if ( file_in.eof ( ) )
-        {
+        if ( file_in.eof ( ) ) {
         	break;
         }
 

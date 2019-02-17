@@ -158,7 +158,7 @@ void handleBinary ( char file_in_name[] ) {
     addr = 0;
 
     while ( 1 ) {
-        file_in.read ( ( char * ) buffer, 16 );
+        file_in.read ( ( char * ) buffer, 6 );
 
         cnt = file_in.gcount();
 
@@ -175,7 +175,7 @@ void handleBinary ( char file_in_name[] ) {
         //  Print 16 data items, in pairs, in hexadecimal.
         //
         cnt2 = 0;
-        for ( n = 0; n < 16; n++ ) {
+        for ( n = 0; n < 6; n++ ) {
             cnt2 = cnt2 + 1;
             if ( cnt2 <= cnt ) {
             	cout << bitset<8>(( int ) buffer[n]);
@@ -192,7 +192,7 @@ void handleBinary ( char file_in_name[] ) {
         //
         cout << " ";
         cnt2 = 0;
-        for ( n = 0; n < 16; n++ ) {
+        for ( n = 0; n < 6; n++ ) {
             cnt2 = cnt2 + 1;
             if ( cnt2 <= cnt ) {
                 if ( buffer[n] < 32 || 126 < buffer[n] ) {

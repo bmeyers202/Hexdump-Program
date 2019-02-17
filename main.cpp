@@ -1,3 +1,4 @@
+// from git hub at 12:28pm 2-17
 # include <cstdlib>
 # include <iostream>
 # include <iomanip>
@@ -11,6 +12,10 @@ int main ( int argc, char *argv[] );
 void handleHex ( char file_in_name[] );
 void handleBinary ( char file_in_name[] );
 
+/*
+ * Checks to see if -b argument is entered
+ * and calls the appropriate function for the output format.
+ */
 int main ( int argc, char *argv[] ) {
     
     if(strcmp(argv[1], "-b") == 0){
@@ -23,9 +28,9 @@ int main ( int argc, char *argv[] ) {
     return 0;
 }
 
-/**
-  * Dumps the file contents into hex format
-**/
+/*
+ * Converts the file contents into hex format
+ */
 void handleHex ( char file_in_name[] ) {
     long int addr;
     unsigned char buffer[100];
@@ -44,14 +49,7 @@ void handleHex ( char file_in_name[] ) {
         return;
     }
     
-    cout << "\n";
-    cout << "Hexdump of \"" << file_in_name << "\":\n";
-    cout << "\n";
-    cout <<
-    "Address               Hexadecimal values                  Printable\n";
-    cout <<
-    "-------  -----------------------------------------------  -------------\n";
-    cout << "\n";
+
     //
     //  Dump the file contents.
     //
@@ -66,13 +64,13 @@ void handleHex ( char file_in_name[] ) {
             break;
         }
         //
-        //  Print the address in decimal and hexadecimal.
+        //  Prints the address in hexadecimal.
         //
         cout << hex << setw(7) << setfill( '0') << ( int ) addr << "  ";
         
         addr = addr + 16;
         //
-        //  Print 16 data items, in pairs of 4, in hexadecimal.
+        //  Print 16 data items in hexadecimal with 8 bits in one column (1 hex is half a byte) .
         //
         cnt2 = 0;
         for ( n = 0; n < 16; n++ ) {
@@ -81,15 +79,15 @@ void handleHex ( char file_in_name[] ) {
                 cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n];
             }
             else {
-             cout << "  ";
+                cout << "  ";
             }
             if(cnt2 % 2 ==0)
-            cout << " ";
+                cout << " ";
         }
         
         cout << setfill ( ' ' );
         //
-        //  Print the printable characters, or a period if unprintable.
+        //  Prints printable characters or a period otherwise.
         //
         cout << " ";
         cnt2 = 0;
@@ -120,9 +118,9 @@ void handleHex ( char file_in_name[] ) {
     return;
 }
 
-/**
-  * Dumps the file contents into binary format
-**/
+/*
+ * Converts the file contents into binary format
+ */
 void handleBinary ( char file_in_name[] ) {
     long int addr;
     unsigned char buffer[100];
@@ -141,14 +139,7 @@ void handleBinary ( char file_in_name[] ) {
         return;
     }
     
-    cout << "\n";
-    cout << "Hexdump of \"" << file_in_name << "\":\n";
-    cout << "\n";
-    cout <<
-    "Address               Binary values                        Printable\n";
-    cout <<
-    "-------  -----------------------------------------------  -------------\n";
-    cout << "\n";
+
     //
     //  Dump the file contents.
     //
@@ -169,7 +160,7 @@ void handleBinary ( char file_in_name[] ) {
         
         addr = addr + 6;
         //
-        //  Print 6 data items in binary.
+        //  Print 6 data items in binary with 8 bits each.
         //
         cnt2 = 0;
         for ( n = 0; n < 6; n++ ) {
@@ -185,7 +176,7 @@ void handleBinary ( char file_in_name[] ) {
         
         cout << setfill ( ' ' );
         //
-        //  Print the printable characters, or a period if unprintable.
+        //  Prints printable characters or a period otherwise.
         //
         cout << " ";
         cnt2 = 0;

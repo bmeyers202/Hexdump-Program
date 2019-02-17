@@ -9,24 +9,6 @@ using namespace std;
 int main ( int argc, char *argv[] );
 void handle ( char file_in_name[] );
 
-void binarySpacedBytes(string stringToSpace){
-    for (int index = 0; index < int(stringToSpace.length()); index++){
-        if(index % 8 == 0){
-            cout << " ";
-        }
-        cout << stringToSpace[index];
-    }
-}
-
-void hexSpacedBytes(string stringToSpace){
-    for (int index = 0; index < int(stringToSpace.length()); index++){
-        if(index % 4 == 0){
-            cout << " ";
-        }
-        cout << stringToSpace[index];
-    }
-}
-
 
 int main ( int argc, char *argv[] )
 

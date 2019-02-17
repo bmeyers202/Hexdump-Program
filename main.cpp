@@ -156,7 +156,6 @@ void handle ( char file_in_name[] )
             {
                 cout << "__";
             }
-            cout << "~~";
         }
         
         cout << setfill ( ' ' );

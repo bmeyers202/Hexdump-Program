@@ -154,7 +154,7 @@ void handleBinary (char file_in_name[]) {
             break;
         }
         //
-        //  Prints the address in Hex and then Binary format.
+        //  Prints the address in Hex.
         //
         cout << hex << setw(7) << setfill( '0') << (int) addr << "  ";
         

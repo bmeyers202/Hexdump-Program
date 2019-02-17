@@ -44,8 +44,7 @@ void handleHex ( char file_in_name[] ) {
 
     if ( !file_in ) {
         cout << "\n";
-        cout << "HANDLE - Fatal error!\n";
-        cout << "  Cannot open \"" << file_in_name << "\"\n";
+        cout << "Cannot open \"" << file_in_name << "\"\n";
         return;
     }
 

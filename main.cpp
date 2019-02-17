@@ -170,7 +170,7 @@ void handleBinary ( char file_in_name[] ) {
         //
         cout << hex << setw(7) << setfill( '0') << ( int ) addr << "  ";
 
-        addr = addr + 16;
+        addr = addr + 6;
         //
         //  Print 16 data items, in pairs, in hexadecimal.
         //

@@ -2,42 +2,35 @@
 # include <iostream>
 # include <iomanip>
 # include <fstream>
+#include <string.h>
 //# include <ctime>
 
 using namespace std;
 
 int main ( int argc, char *argv[] );
-void handle ( char file_in_name[] );
+void handleHex ( char file_in_name[] );
+bool findIfTextFile (string fileName, string fileExt);
 
 int main ( int argc, char *argv[] ) {
-    char file_in_name[80];
 
-    //
-    //  If the input file was not specified, get it now.
-    //
-    if ( argc <= 1 ) {
-        cout << "\n";
-        cout << "HEXDUMP:\n";
-        cout << "  Please enter the name of a file to be analyzed.\n";
+	if(strcmp(argv[1], "-b") == 0){
+	  //make binary function call
+	}
+	else{
+	  handleHex(argv[1]);
+	}
 
-        cin.getline ( file_in_name, sizeof ( file_in_name ) );
+    //  Get the file from the argument list.
 
-        handle ( file_in_name );
-    }
-    //
-    //  Otherwise, get the file(s) from the argument list.
-    //
-    else {
-        for (int i = 1 ; i < argc ; ++i ) {
-            handle ( argv[i] );
-        }
+    for (int i = 1 ; i < argc ; ++i ) {
+         handleHex ( argv[i] );
     }
 
     return 0;
 }
 //****************************************************************************80
 
-void handle ( char file_in_name[] ) {
+void handleHex ( char file_in_name[] ) {
     long int addr;
     unsigned char buffer[100];
     long int cnt;
@@ -47,7 +40,7 @@ void handle ( char file_in_name[] ) {
     //
     //  Open the file.
     //
-    file_in.open ( file_in_name );
+    file_in.open ( file_in_name);
 
     if ( !file_in ) {
         cout << "\n";
@@ -130,4 +123,12 @@ void handle ( char file_in_name[] ) {
     file_in.close ( );
 
     return;
+}
+
+bool findIfTextFile (string fileName, string fileExt) {
+    if (fileName.length() >= fileExt.length()) {
+        return (0 == fileName.compare (fileName.length() - fileExt.length(), fileExt.length(), fileExt));
+    } else {
+        return false;
+    }
 }

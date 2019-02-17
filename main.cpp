@@ -36,11 +36,11 @@ int main ( int argc, char *argv[] )
     char file_in_name[80];
     int i;
     bool VERBOSE = true;
-    
+
     if ( VERBOSE )
     {
-       
-        
+
+
         cout << "\n";
         cout << "HEXDUMP:\n";
         cout << "  C++ version\n";
@@ -57,9 +57,9 @@ int main ( int argc, char *argv[] )
         cout << "\n";
         cout << "HEXDUMP:\n";
         cout << "  Please enter the name of a file to be analyzed.\n";
-        
+
         cin.getline ( file_in_name, sizeof ( file_in_name ) );
-        
+
         handle ( file_in_name );
     }
     //
@@ -72,17 +72,17 @@ int main ( int argc, char *argv[] )
             handle ( argv[i] );
         }
     }
-    
+
     if ( VERBOSE )
     {
         cout << "\n";
         cout << "HEXDUMP:\n";
         cout << "  Normal end of execution.\n";
-        
+
         cout << "\n";
         //timestamp ( );
     }
-    
+
     return 0;
 }
 //****************************************************************************80
@@ -93,7 +93,7 @@ void handle ( char file_in_name[] )
 
 {
     long int addr;
-    unsigned char buffer[20];
+    unsigned char buffer[100];
     long int cnt;
     long int cnt2;
     ifstream file_in;
@@ -102,7 +102,7 @@ void handle ( char file_in_name[] )
     //  Open the file.
     //
     file_in.open ( file_in_name );
-    
+
     if ( !file_in )
     {
         cout << "\n";
@@ -110,7 +110,7 @@ void handle ( char file_in_name[] )
         cout << "  Cannot open \"" << file_in_name << "\"\n";
         return;
     }
-    
+
     cout << "\n";
     cout << "Hexdump of \"" << file_in_name << "\":\n";
     cout << "\n";
@@ -123,13 +123,13 @@ void handle ( char file_in_name[] )
     //  Dump the file contents.
     //
     addr = 0;
-    
+
     while ( 1 )
     {
         file_in.read ( ( char * ) buffer, 16 );
-        
+
         cnt = file_in.gcount();
-        
+
         if ( cnt <= 0 )
         {
             break;
@@ -137,8 +137,8 @@ void handle ( char file_in_name[] )
         //
         //  Print the address in decimal and hexadecimal.
         //
-        cout << setw(7) << ( int ) addr << "  ";
-        
+        cout << hex << setw(7) << setfill( '0') << ( int ) addr << "  ";
+
         addr = addr + 16;
         //
         //  Print 16 data items, in pairs, in hexadecimal.
@@ -149,15 +149,16 @@ void handle ( char file_in_name[] )
             cnt2 = cnt2 + 1;
             if ( cnt2 <= cnt )
             {
-                cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n];
-                cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[++n];
+            	cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n];
+            	cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[++n];
             }
             else
             {
                 cout << "__";
             }
+            cout << " ";
         }
-        
+
         cout << setfill ( ' ' );
         //
         //  Print the printable characters, or a period if unprintable.
@@ -181,17 +182,17 @@ void handle ( char file_in_name[] )
         }
         cout << "\n";
         cout << dec;
-        
+
         if ( file_in.eof ( ) )
         {
-            break;
+        	break;
         }
-        
+
     }
     //
     // Close the file.
     //
     file_in.close ( );
-    
+
     return;
 }

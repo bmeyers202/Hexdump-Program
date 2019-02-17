@@ -11,18 +11,7 @@ void handle ( char file_in_name[] );
 
 int main ( int argc, char *argv[] ) {
     char file_in_name[80];
-    int i;
-    bool VERBOSE = true;
 
-    if ( VERBOSE ) {
-        cout << "\n";
-        cout << "HEXDUMP:\n";
-        cout << "  C++ version\n";
-        cout << "\n";
-        cout << "  Compiled on " << __DATE__ << " at " << __TIME__ << ".\n";
-        cout << "\n";
-        cout << "  Produce a hexadecimal dump of a file.\n";
-    }
     //
     //  If the input file was not specified, get it now.
     //
@@ -39,18 +28,9 @@ int main ( int argc, char *argv[] ) {
     //  Otherwise, get the file(s) from the argument list.
     //
     else {
-        for ( i = 1 ; i < argc ; ++i ) {
+        for (int i = 1 ; i < argc ; ++i ) {
             handle ( argv[i] );
         }
-    }
-
-    if ( VERBOSE ){
-        cout << "\n";
-        cout << "HEXDUMP:\n";
-        cout << "  Normal end of execution.\n";
-
-        cout << "\n";
-        //timestamp ( );
     }
 
     return 0;

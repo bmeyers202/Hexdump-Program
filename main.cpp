@@ -150,6 +150,7 @@ void handle ( char file_in_name[] )
             if ( cnt2 <= cnt )
             {
                 cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n];
+                cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[++n];
             }
             else
             {

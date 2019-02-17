@@ -4,7 +4,6 @@
 # include <fstream>
 #include <string.h>
 #include <bitset>
-//# include <ctime>
 
 using namespace std;
 
@@ -22,16 +21,12 @@ int main ( int argc, char *argv[] ) {
         handleHex(argv[1]);
     }
     
-    //  Get the file from the argument list.
-    
-    //    for (int i = 1 ; i < argc ; ++i ) {
-    //         handleHex ( argv[i] );
-    //    }
-    
     return 0;
 }
-//****************************************************************************80
 
+/**
+  * Dumps the file contents into hex format
+**/
 void handleHex ( char file_in_name[] ) {
     long int addr;
     unsigned char buffer[100];
@@ -78,15 +73,13 @@ void handleHex ( char file_in_name[] ) {
         
         addr = addr + 16;
         //
-        //  Print 16 data items, in pairs, in hexadecimal.
+        //  Print 16 data items, in pairs of 4, in hexadecimal.
         //
         cnt2 = 0;
         for ( n = 0; n < 16; n++ ) {
             cnt2 = cnt2 + 1;
             if ( cnt2 <= cnt ) {
                 cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n];
-                //cout << "cnt2 "<<cnt2<< "cnt2E "<< n<<" n";
-              //  cout << hex << setw(2) << setfill ( '0' ) << ( int ) buffer[n++];
             }
             else {
              cout << "  ";
@@ -128,6 +121,9 @@ void handleHex ( char file_in_name[] ) {
     return;
 }
 
+/**
+  * Dumps the file contents into binary format
+**/
 void handleBinary ( char file_in_name[] ) {
     long int addr;
     unsigned char buffer[100];
@@ -168,13 +164,13 @@ void handleBinary ( char file_in_name[] ) {
             break;
         }
         //
-        //  Print the address in decimal and hexadecimal.
+        //  Print the address in decimal and binary.
         //
         cout << hex << setw(7) << setfill( '0') << ( int ) addr << "  ";
         
         addr = addr + 6;
         //
-        //  Print 16 data items, in pairs, in hexadecimal.
+        //  Print 6 data items in binary.
         //
         cnt2 = 0;
         for ( n = 0; n < 6; n++ ) {

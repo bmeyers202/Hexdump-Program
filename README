@@ -26,10 +26,7 @@ Lessons Learned: Learned that we could use the hex and bitset function by includ
 functions from scratch to convert tohex and binary respectively. Learned how to read from file, how to make header and Makefile.
 
 
-A basic hexdump program that opens a binary or text file, reads every byte in
-the file and write both the ASCII and hex value or Binary value for that byte as well as it’s printable
-character to standard output. For bytes forming non-printable characters, prints a ‘.’
-character
+
 
 
 

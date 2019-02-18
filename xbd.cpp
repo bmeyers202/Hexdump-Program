@@ -27,8 +27,11 @@ int main (int argc, char *argv[]) {
     return 0;
 }
 
-/*
- * Converts the file contents into hex format
+/**
+ * Dumps the file contents in hex format.
+ * Displaying the address, hex format of charachters, and human-readable format of characters.
+ *
+ * @param	filename[] the name of the file sent as an argument to be opened
  */
 void handleHex (char fileName[]) {
     unsigned char buffer[100];
@@ -103,8 +106,11 @@ void handleHex (char fileName[]) {
     return;
 }
 
-/*
- * Converts the file contents into binary format
+/**
+ * Dumps the file contents in binary format.
+ * Displaying the address, binary format of charachters, and human-readable format of characters.
+ *
+ * @param	filename[] the name of the file sent as an argument to be opened
  */
 void handleBinary (char fileName[]) {
     long int address;

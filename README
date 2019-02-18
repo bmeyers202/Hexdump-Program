@@ -1,0 +1,52 @@
+
+README file Instructions:
+Names: Rahul Sharma, Blake Meyers
+Class account username: Blake Meyers cssc0430,  Rahul Sharma cssc0417
+Class information: CS530 Spring 2019
+Assignment information: Assignment #1, HexDump. A basic hexdump program that opens a binary or text file, reads every byte in
+the file and writes both the ASCII and hex value or Binary value for that byte as well as it’s printable
+character to standard output. For bytes forming non-printable characters, prints a ‘.’character
+
+Filename of this file: README
+
+
+File manifest: xbd.cpp, xdb.h, Makefile, README,
+Compile instructions
+Operating instructions: To output in binary format then type xbd -b <filename>. To output in Hexadecimal
+format then type xbd <filename>
+
+
+List/description of novel/significant design decisions: The program is divided into two main functions that
+perform most of the work. handleHex and handleBinary are called depending on the arguments given.
+
+List/description of any extra features/algorithms/functionality you included which were not required: N/A
+List/description of all known deficiencies or bugs: N/A
+
+Lessons Learned: Learned that we could use the hex and bitset function by including libraries instead of making
+functions from scratch to convert tohex and binary respectively. Learned how to read from file, how to make header and Makefile.
+
+
+A basic hexdump program that opens a binary or text file, reads every byte in
+the file and write both the ASCII and hex value or Binary value for that byte as well as it’s printable
+character to standard output. For bytes forming non-printable characters, prints a ‘.’
+character
+
+
+
+README file Instructions:
+A README file is a text file which is usually distributed with the software project to provide a basic description of
+the project and information a user may need in order to compile or operate the program.
+At a minimum, all files in the project (source code, Makefile, README file, etc) shall contain:
+Your name (and your partners name if a team project)
+Your class account username (and your partners if a team project)
+Class information (i.e. CS 570, Fall 2006)
+Assignment information (i.e. Assignment #1, Process Manager)
+Filename of this file (i.e. README)
+At a minimum, the README file shall contain (in addition to the above):
+File manifest (name of all files included in this project)
+Compile instructions
+Operating instructions (include any/all command line options/arguments, required inputs, etc)
+List/description of novel/significant design decisions
+List/description of any extra features/algorithms/functionality you included which were not required
+List/description of all known deficiencies or bugs
+Lessons Learned

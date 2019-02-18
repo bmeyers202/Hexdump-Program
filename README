@@ -20,7 +20,7 @@ handleHex and handleBinary, that dump the conents of the file in hex or binary d
 List/description of any extra features/algorithms/functionality you included which were not required: N/A
 List/description of all known deficiencies or bugs: N/A
 
-Lessons Learned: Learned that we could use the hex and bitset function by including libraries instead of making
+Lessons Learned: Learned that we could use the hex and bitset functions by including libraries instead of making
 functions from scratch to convert to hex and binary respectively. Learned how to read from file, how to make header and Makefile.
 
 

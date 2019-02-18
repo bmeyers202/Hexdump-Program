@@ -1,0 +1,8 @@
+output: xbd.o
+	g++ xbd.o -o output
+
+xbd.o: xbd.cpp xbd.h
+	g++ -c xbd.cpp
+
+clean:
+	rm *.o output

@@ -21,7 +21,8 @@ List/description of any extra features/algorithms/functionality you included whi
 List/description of all known deficiencies or bugs: N/A
 
 Lessons Learned: Learned that we could use the hex and bitset functions by including libraries instead of making
-functions from scratch to convert to hex and binary respectively. Learned how to read from file, how to make header and Makefile.
+functions from scratch to convert to hex and binary respectively. Learned how to read from file, how to make 
+header and Makefile. Also learned how to work in a team and collaborate on github.
 
 
 

@@ -5,7 +5,7 @@
   * Assignment information: Assignment #1, HexDump. A basic hexdump program that opens a binary or text file, reads every byte in
   * the file and writes both the ASCII and hex value or Binary value for that byte as well as it’s printable
   * character to standard output. For bytes forming non-printable characters, prints a ‘.’character
-*/
+**/
 
 #include "xbd.h"
 

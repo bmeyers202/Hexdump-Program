@@ -8,8 +8,6 @@ the file and writes both the ASCII and hex value or Binary value for that byte a
 character to standard output. For bytes forming non-printable characters, prints a ‘.’character
 
 Filename of this file: README
-
-
 File manifest: xbd.cpp, xdb.h, Makefile, README,
 Compile instructions: make
 Operating instructions: To output in binary format then type xbd -b <filename>. To output in Hexadecimal

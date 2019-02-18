@@ -8,14 +8,16 @@ the file and writes both the ASCII and hex value or Binary value for that byte a
 character to standard output. For bytes forming non-printable characters, prints a ‘.’character
 
 Filename of this file: README
+
+
 File manifest: xbd.cpp, xdb.h, Makefile, README,
 Compile instructions: make
 Operating instructions: To output in binary format then type xbd -b <filename>. To output in Hexadecimal
 format then type xbd <filename>
 
 
-List/description of novel/significant design decisions: The program is divided into two main functions that
-perform most of the work. handleHex and handleBinary are called depending on the arguments given.
+List/description of novel/significant design decisions: The program is divided into two main functions,
+handleHex and handleBinary, that dump the conents of the file in hex or binary depending on the arguments given.
 
 List/description of any extra features/algorithms/functionality you included which were not required: N/A
 List/description of all known deficiencies or bugs: N/A

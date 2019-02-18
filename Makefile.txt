@@ -7,11 +7,15 @@
   * character to standard output. For bytes forming non-printable characters, prints a ‘.’character
 **/
 
+// Any time xbd.o changes, compile into executable caled xbd
 xbd: xbd.o
 	g++ xbd.o -o xbd
+	
 
+// Any time xbd.cpp or xbd.h changes, compiles into object file, xbd.o
 xbd.o: xbd.cpp xbd.h
 	g++ -c xbd.cpp
 
+//Removes any previously existing .o files or xbd executables files
 clean:
 	rm *.o xbd

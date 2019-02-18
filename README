@@ -11,7 +11,7 @@ Filename of this file: README
 
 
 File manifest: xbd.cpp, xdb.h, Makefile, README,
-Compile instructions
+Compile instructions: make
 Operating instructions: To output in binary format then type xbd -b <filename>. To output in Hexadecimal
 format then type xbd <filename>
 
